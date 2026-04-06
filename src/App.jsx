@@ -37,17 +37,12 @@ function WorkCard({ work }) {
         onClick={() => setIsOpen(!isOpen)}
         className="mt-4 text-sm text-blue-600 hover:text-blue-800 cursor-pointer"
       >
-        {isOpen ? '閉じる ↑' : '詳細を見る ↓'}
+        {isOpen ? '閉じる' : '詳細を見る'}
       </button>
       {isOpen && (
         <div className="mt-3 pt-3 border-t border-gray-100">
           <p className="text-sm text-gray-600">{work.description}</p>
-          
-            href={work.url}
-            className="inline-block mt-3 text-sm text-white bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
-          >
-            サイトを見る →
-          </a>
+          <a href={work.url} className="inline-block mt-3 text-sm text-white bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors">サイトを見る</a>
         </div>
       )}
     </div>
@@ -63,7 +58,6 @@ function App() {
           <p className="mt-2 text-gray-500">Web制作の実績</p>
         </div>
       </header>
-
       <main className="max-w-4xl mx-auto px-6 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {works.map((work) => (
@@ -71,9 +65,8 @@ function App() {
           ))}
         </div>
       </main>
-
       <footer className="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-400">
-        © 2026 Portfolio
+        &copy; 2026 Portfolio
       </footer>
     </div>
   )
