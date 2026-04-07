@@ -26,7 +26,6 @@ const works = [
 
 function WorkCard({ work }) {
   const [isOpen, setIsOpen] = useState(false)
-
   return (
     <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
       <div className="flex justify-between items-start">
@@ -49,6 +48,68 @@ function WorkCard({ work }) {
   )
 }
 
+function ContactForm() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setSubmitted(true)
+  }
+
+  if (submitted) {
+    return (
+      <div className="bg-white border border-gray-200 rounded-2xl p-8 text-center">
+        <p className="text-xl font-bold text-green-600">送信完了！</p>
+        <p className="mt-2 text-gray-600">お問い合わせありがとうございます。</p>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="bg-white border border-gray-200 rounded-2xl p-8">
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">お名前</label>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">メールアドレス</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+        />
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">お問い合わせ内容</label>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+          rows="5"
+          className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-blue-500"
+        />
+      </div>
+      <button
+        type="submit"
+        className="w-full bg-gray-900 text-white py-3 rounded-lg hover:bg-gray-700 transition-colors cursor-pointer"
+      >
+        送信する
+      </button>
+    </form>
+  )
+}
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -58,7 +119,8 @@ function App() {
           <p className="mt-2 text-gray-500">Web制作の実績</p>
         </div>
       </header>
-<section className="max-w-4xl mx-auto px-6 py-10">
+
+      <section className="max-w-4xl mx-auto px-6 py-10">
         <div className="bg-white border border-gray-200 rounded-2xl p-8">
           <div className="flex items-center gap-6">
             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
@@ -81,13 +143,21 @@ function App() {
           </div>
         </div>
       </section>
+
       <main className="max-w-4xl mx-auto px-6 py-10">
+        <h2 className="text-2xl font-bold mb-6">Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {works.map((work) => (
             <WorkCard key={work.id} work={work} />
           ))}
         </div>
       </main>
+
+      <section className="max-w-4xl mx-auto px-6 py-10">
+        <h2 className="text-2xl font-bold mb-6">Contact</h2>
+        <ContactForm />
+      </section>
+
       <footer className="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-400">
         &copy; 2026 Portfolio
       </footer>
