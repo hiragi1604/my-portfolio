@@ -58,6 +58,29 @@ function App() {
           <p className="mt-2 text-gray-500">Web制作の実績</p>
         </div>
       </header>
+<section className="max-w-4xl mx-auto px-6 py-10">
+        <div className="bg-white border border-gray-200 rounded-2xl p-8">
+          <div className="flex items-center gap-6">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
+              H
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold">ひらが</h2>
+              <p className="text-gray-500 mt-1">Web Developer / LP制作</p>
+            </div>
+          </div>
+          <p className="mt-6 text-gray-700 leading-relaxed">
+            名古屋を拠点にWeb制作をしています。クリニック、温泉旅館、美容室など様々な業種のランディングページを制作してきました。HTML/CSS/JavaScriptに加え、React・Next.jsでのWebアプリ開発にも対応しています。お気軽にご相談ください。
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">HTML</span>
+            <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">CSS</span>
+            <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">JavaScript</span>
+            <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">React</span>
+            <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">Tailwind CSS</span>
+          </div>
+        </div>
+      </section>
       <main className="max-w-4xl mx-auto px-6 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {works.map((work) => (
