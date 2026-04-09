@@ -10,24 +10,24 @@ const works = [
   },
   {
     id: 2,
-    title: 'クリニックLP',
-    description: '清潔感のある医療系ランディングページ。信頼感を重視したデザイン。',
+    title: '整体院LP',
+    description: '清潔感と信頼感を重視した整体院向けランディングページ。',
     tech: 'HTML / CSS',
-    url: '#'
+    url: 'https://seitai-two.vercel.app/'
   },
   {
     id: 3,
     title: '温泉旅館LP',
     description: '和風テイストの旅館向けランディングページ。落ち着いた雰囲気を演出。',
     tech: 'HTML / CSS',
-    url: '#'
+    url: 'https://onsen3.vercel.app/'
   },
   {
     id: 4,
-    title: '美容室LP',
-    description: 'おしゃれな美容サロン向けランディングページ。トレンド感のあるデザイン。',
+    title: '美容室LP（RÉSONANCE）',
+    description: 'エディトリアル誌のような美容室向けランディングページ。Cormorant GaramondとShippori Minchoを組み合わせた上質な世界観。',
     tech: 'HTML / CSS',
-    url: '#'
+    url: 'https://salon-lp-olive.vercel.app/'
   }
 ]
 
